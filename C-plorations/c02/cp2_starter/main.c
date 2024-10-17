@@ -25,10 +25,8 @@
  */
 int length(char* txt) {
 	int len = 0;
-	int i;
-	
-	for (int i = 0; i < txt; i++) {
-		len += 1;
+	while (txt[len] != '\0') {
+		len ++;
 	}
 	return len;  
 }
@@ -50,8 +48,10 @@ int length(char* txt) {
 char *welcome(char* hello, char* name) {
 	// dynamically allocate a new string
 	char *message = malloc(sizeof(char)*MAX_LIMIT);
-		
-	
+		strcpy(message, hello);
+		strcat(message, " ");
+		strcat(message, name);
+		strcat(message, "!");
 	
 	return message;	
 }
@@ -69,8 +69,18 @@ char *welcome(char* hello, char* name) {
  */
 void reverse(char* txt, char* result) {
 
-	/* REPLACE WITH YOUR CODE */
+	strcpy(result, txt);
+	int first = 0;
+	int last = strlen(result) - 1;
+	char temp;
+	while (first < last) {
+		temp = result[first];
+		result[first] = result[last];
+		result[last] = temp;
+		first++;
+		last--;
 	
+}
 }
 
 
@@ -85,8 +95,13 @@ void reverse(char* txt, char* result) {
  */
 int vowels(char* txt) {
 	int vowel = 0;
+	int i = 0;
 
-	/* REPLACE WITH YOUR CODE */
+	while(txt[i] != '\0') {
+		if (txt[i] == 'a' || txt[i] == 'A' || txt[i] == 'e' || txt[i] == 'E' || txt[i] == 'i' || txt[i] == 'I' || txt[i] == 'o' || txt[i] == 'O' || txt[i] == 'u' || txt[i] == 'U')
+			vowel ++;
+		i++;
+	}
 
 	return vowel;
 }
@@ -108,9 +123,18 @@ int vowels(char* txt) {
  */
 int quartile(char* name) {
 
-	/* REPLACE WITH YOUR CODE */
-	
-	return -1; // <==fix!
+	if (name[0] == 'A' || name[0] == 'B' || name[0] == 'C' || name[0] == 'D' || name[0] == 'E' || name[0] == 'F') {
+		return 1;
+	}
+	else if (name[0] == 'G' || name[0] == 'H' || name[0] == 'I' || name[0] == 'J' || name[0] == 'K' || name[0] == 'L') {
+		return 2;
+	}
+	else if (name[0] == 'M' || name[0] == 'N' || name[0] == 'O' || name[0] == 'P' || name[0] == 'Q' || name[0] == 'R') {
+		return 3;
+	}
+	else {
+		return 4;
+	}
 }
 
 
