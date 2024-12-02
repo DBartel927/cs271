@@ -10,4 +10,4 @@ $(TARGET): $(OBJFILES)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
 
 clean:
-	del /Q main.o parser.o symtable.o error.o $(TARGET) *~
+	del /Q main.o parser.o symtable.o error.o $(TARGET) *.~

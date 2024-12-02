@@ -113,8 +113,6 @@ void parse(FILE *file) {
             continue;
         }
 		
-		instr_num++;
-		
 		if (is_Atype(line)) {
 			inst_type = 'A';
 		} else if (is_Ctype(line)) {
@@ -127,5 +125,6 @@ void parse(FILE *file) {
             exit_program(EXIT_TOO_MANY_INSTRUCTIONS, MAX_INSTRUCTIONS + 1);
         }
         printf("%u: %c  %s\n", instr_num, inst_type, line);
+		instr_num++;
     }
 }

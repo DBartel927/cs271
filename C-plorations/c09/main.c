@@ -21,6 +21,8 @@ int main(int argc, char **argv) {
     }
 
     parse(file);
+	
+	symtable_print_labels();
 
     fclose(file);
     return 0;
