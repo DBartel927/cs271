@@ -1,0 +1,35 @@
+Assembler Project - README
+
+Introduction
+This project is an implementation of an assembler for the Hack computer. The assembler translates assembly language programs into binary machine code that can be executed by the Hack hardware.
+
+Files
+The following files are included in the 06 directory:
+
+main.c : The driver program that initiates the assembler.
+
+parser.c and parser.h : Parsing and handling the instructions.
+
+symtable.c and symtable.h : Symbol table implementation.
+
+error.c and error.h : Error handling functions.
+
+hack.h : Definitions and macros for the Hack machine.
+
+Makefile : Used for compiling the program.
+
+README : This file containing instructions for running the assembler.
+
+Compilation
+To compile the assembler, navigate to the directory containing the source files and run:
+
+make
+
+This will generate an executable named assembler.
+
+Running the Assembler
+The driver program for the assembler is main.c. To use the assembler, run the following command:
+
+./assembler Prog.asm
+
+Here, Prog.asm is the assembly file you want to assemble. The output will be a binary file named Prog.asm.hack.
